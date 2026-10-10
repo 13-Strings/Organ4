@@ -1,0 +1,28 @@
+# OSMOSIS 提交包 —— conda 环境
+#
+#   conda env create -f environment.yml
+#   conda activate osmosis
+#
+# 纯 pip 环境用 requirements.txt 即可；本文件只是把 Python 版本与核心
+# 科学计算栈一并钉死，避免 conda 默认解析出与 requirements.txt 不同的版本。
+name: osmosis
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  # 直接依赖（与 requirements.txt 一致）
+  - numpy=2.2.6
+  - scipy=1.15.2
+  - scikit-learn=1.7.2
+  - pandas=2.3.2
+  - pillow=12.2.0
+  - matplotlib=3.8.4
+  # torch 走 pip 装 +cu118 轮子，见 pip 段（conda 的 pytorch 通道版本号对不上）
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torch==2.5.0
+      - torchvision==0.20.0
+      - setproctitle==1.3.7

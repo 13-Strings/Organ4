@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 运行期可随时重跑得到的中间产物（不入库）
+*.log
+*.tmp
+.pytest_cache/
+weights/
+outputs/
+outputs/**/masks/
+outputs/**/probs/
+
+# 数据集与缓存不入库（体积大，获取方式见 docs/03-数据集与权重清单.md）
+datasets/
+*.u8

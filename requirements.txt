@@ -1,0 +1,26 @@
+# OSMOSIS 提交包 —— Python 依赖
+#
+# 版本按**实测跑通的环境**固定：Python 3.10 + torch 2.5.0+cu118，单卡 24GB。
+# 代码只用到 numpy / scipy / sklearn / pillow / pandas / torch / torchvision /
+# matplotlib / setproctitle 这 9 个直接依赖，没有 timm、没有 opencv、没有
+# segmentation_models_pytorch —— ViT / MAE / 分割头全部在该仓库内自研实现
+# （见 models/vit.py、models/mae.py、models/heads.py），形态学特征用
+# scipy.ndimage 手写（见 morphology.py）。
+#
+# CUDA 轮子：+cu118 对应 NVIDIA 驱动 >= 452.39。若你的驱动更新，把 torch /
+# torchvision 两行的索引换成匹配版本即可（https://pytorch.org/get-started/locally/），
+# 其余版本不用动：
+#   pip install torch==2.5.0 torchvision==0.20.0 --index-url https://download.pytorch.org/whl/cu121
+#
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+torch==2.5.0
+torchvision==0.20.0
+
+numpy==2.2.6
+scipy==1.15.2
+scikit-learn==1.7.2
+pandas==2.3.2
+pillow==12.2.0
+matplotlib==3.8.4
+setproctitle==1.3.7

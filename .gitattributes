@@ -1,0 +1,15 @@
+# 权重与逐图概率图走 Git LFS。
+# weights/ 里 6 个 .pt 共约 5.6GB、outputs/**/ens_probs 约 1GB —— 直接 push 会被
+# GitHub 的 100MB 单文件上限拒收。启用方式（克隆方也需要装 git-lfs）：
+#
+#   git lfs install
+#   git add .gitattributes
+#   git add weights outputs
+#   git commit -m "add weights and frozen outputs"
+#
+# 若不想用 LFS，见 README「分发方式」一节的替代方案（release 附件 / 网盘 / 分卷）。
+*.pt  filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text
+*.u8  filter=lfs diff=lfs merge=lfs -text
