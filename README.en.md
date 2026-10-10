@@ -21,8 +21,8 @@ Note: Baselines refer to the classic segmentation model indicators reported in r
 | deeplab          | 0.9408            | 0.9551            | 0.9532             | 0.9117            | 0.9828            |
 | mask rcnn        | 0.9380            | <ins>0.9585</ins> | 0.9510             | 0.9080            | 0.9822            |
 | yolo             | 0.9505            | 0.8890            | 0.9180             | 0.8520            | 0.9778            |
-| osmosis-single   | <ins>0.9579</ins> | 0.9525            | **0.9855**   | <ins>0.9716</ins> | <ins>0.9853</ins> |
-| osmosis-ensemble | 0.9540            | **0.9607**  | <ins>0.9729 </ins> | **0.9729**  | **0.9860**  |
+| osmosis-single   | <ins>0.9579</ins> | 0.9525            | <ins>0.9855 </ins>   | <ins>0.9716</ins> | <ins>0.9853</ins> |
+| osmosis-ensemble | 0.9540            | **0.9607**  | **0.9862** | **0.9729**  | **0.9860**  |
 
 Table 2 Performance Results of Ablation Experiments for Multi-stage Transfer Learning Model
 
